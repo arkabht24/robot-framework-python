@@ -1,7 +1,7 @@
 *** Settings ***
 # Documentation    To validate the Login form resource
 # ...    Here we are keeping the system specific Keywords
-# ...    Let's explore
+# ...    Let's explore!!
 # Library    SeleniumLibrary
 
 *** Variables ***
@@ -22,4 +22,4 @@ open the browser with the app url
     Open browser    ${url}  chrome
     Maximize Browser Window
 Close Browser session
-    Close Browser
+    Close Browser 
