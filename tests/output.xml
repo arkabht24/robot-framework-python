@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on darwin)" generated="2025-05-08T02:04:48.480909" rpa="false" schemaversion="5">
+<suite id="s1" name="testDemo4" source="/Users/arkabhattacharyya/Desktop/Robot Framework/tests/testDemo4.robot">
+<test id="s1-t1" name="Validate Unsuccessful Login" line="9">
+<kw name="open the browser with the app url" owner="resource" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-08T02:04:48.537890" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-08T02:04:48.537791" elapsed="4.238922"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-08T02:04:52.777101" elapsed="0.393587"/>
+</kw>
+<status status="PASS" start="2025-05-08T02:04:48.537487" elapsed="4.633359"/>
+</kw>
+<kw name="fill in the login form">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${input-username}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-08T02:04:53.171868" elapsed="0.016159"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-08T02:04:53.188280" level="INFO">Typing text 'Admin' into text field 'xpath=//input[@placeholder='Username']'.</msg>
+<arg>${input-username}</arg>
+<arg>${user-name-data-arg}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T02:04:53.188130" elapsed="0.082590"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${input-password}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-08T02:04:53.270883" elapsed="0.008925"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-08T02:04:53.280034" level="INFO">Typing text 'admin' into text field 'xpath=//input[@placeholder='Password']'.</msg>
+<arg>${input-password}</arg>
+<arg>${password-data-arg}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T02:04:53.279900" elapsed="0.030175"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-08T02:04:53.310334" level="INFO">Clicking button 'xpath=//button[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']'.</msg>
+<arg>${click-button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T02:04:53.310186" elapsed="1.017799"/>
+</kw>
+<arg>${username-data}</arg>
+<arg>${invalid-password-data}</arg>
+<status status="PASS" start="2025-05-08T02:04:53.171408" elapsed="1.156693"/>
+</kw>
+<kw name="wait until it checks and displays error message">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${error-message-p-box}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-08T02:04:54.328505" elapsed="0.424337"/>
+</kw>
+<status status="PASS" start="2025-05-08T02:04:54.328319" elapsed="0.424595"/>
+</kw>
+<kw name="verify error message is correct">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-08T02:04:54.753330" level="INFO">Verifying element 'xpath=//p[@class='oxd-text oxd-text--p oxd-alert-content-text']' contains exact text 'Invalid credentials'.</msg>
+<arg>${error-message-p-box}</arg>
+<arg>${expected-error-message-data}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-08T02:04:54.753196" elapsed="0.008973"/>
+</kw>
+<status status="PASS" start="2025-05-08T02:04:54.753048" elapsed="0.009186"/>
+</kw>
+<kw name="Close Browser session" owner="resource" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-08T02:04:54.762589" elapsed="0.067426"/>
+</kw>
+<status status="PASS" start="2025-05-08T02:04:54.762433" elapsed="0.067654"/>
+</kw>
+<status status="PASS" start="2025-05-08T02:04:48.537180" elapsed="6.292969"/>
+</test>
+<test id="s1-t2" name="Validate Successful Login and more" line="14">
+<kw name="open the browser with the app url" owner="resource" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-08T02:04:54.830768" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-08T02:04:54.830661" elapsed="3.202082"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-08T02:04:58.033039" elapsed="0.398936"/>
+</kw>
+<status status="PASS" start="2025-05-08T02:04:54.830524" elapsed="3.601550"/>
+</kw>
+<kw name="fill in the login form">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${input-username}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-08T02:04:58.432617" elapsed="0.012580"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-08T02:04:58.445428" level="INFO">Typing text 'Admin' into text field 'xpath=//input[@placeholder='Username']'.</msg>
+<arg>${input-username}</arg>
+<arg>${user-name-data-arg}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T02:04:58.445295" elapsed="0.078813"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${input-password}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-08T02:04:58.524257" elapsed="0.008897"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-08T02:04:58.533383" level="INFO">Typing text 'admin123' into text field 'xpath=//input[@placeholder='Password']'.</msg>
+<arg>${input-password}</arg>
+<arg>${password-data-arg}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T02:04:58.533250" elapsed="0.031218"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-08T02:04:58.564717" level="INFO">Clicking button 'xpath=//button[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']'.</msg>
+<arg>${click-button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T02:04:58.564581" elapsed="0.032157"/>
+</kw>
+<arg>${username-data}</arg>
+<arg>${valid-password-data}</arg>
+<status status="PASS" start="2025-05-08T02:04:58.432365" elapsed="0.164443"/>
+</kw>
+<kw name="Close Browser session" owner="resource" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-08T02:04:58.597181" elapsed="0.062802"/>
+</kw>
+<status status="PASS" start="2025-05-08T02:04:58.597014" elapsed="0.063035"/>
+</kw>
+<status status="PASS" start="2025-05-08T02:04:54.830317" elapsed="3.829791"/>
+</test>
+<doc>To validate the Login form</doc>
+<status status="PASS" start="2025-05-08T02:04:48.481650" elapsed="10.178760"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="testDemo4" id="s1" pass="2" fail="0" skip="0">testDemo4</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
