@@ -2,7 +2,7 @@
 # Documentation    To validate the Login form resource
 # ...    Here we are keeping the system specific Keywords
 # ...    Let's explore!!
-# Library    SeleniumLibrary
+Library    SeleniumLibrary
 
 *** Variables ***
 ${url}    https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
@@ -10,6 +10,7 @@ ${input-username}    xpath=//input[@placeholder='Username']
 ${input-password}    xpath=//input[@placeholder='Password']
 ${click-button}    xpath=//button[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']
 ${error-message-p-box}    xpath=//p[@class='oxd-text oxd-text--p oxd-alert-content-text']
+${quick-actions}    xpath=//div[@class='oxd-grid-item oxd-grid-item--gutters orangehrm-quick-launch-card']
 
 ${username-data}    Admin
 ${valid-password-data}    admin123

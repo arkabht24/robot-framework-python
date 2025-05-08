@@ -13,6 +13,7 @@ Validate Unsuccessful Login
 
 Validate Successful Login and more
     fill in the login form    ${username-data}    ${valid-password-data}
+    verify all the contents of the quick launch is displayed
 
 
 
@@ -28,4 +29,12 @@ wait until it checks and displays error message
     Wait Until Element Is Visible    ${error-message-p-box}
 verify error message is correct
     Element Text Should Be    ${error-message-p-box}    ${expected-error-message-data}
-     
+verify all the contents of the quick launch is displayed  
+    @{list-of-quick-launch}=    Create List    Assign Leave    Leave List    Timesheets    Apply Leaves    My Leave    My Timesheets
+    Wait Until Element Is Visible    ${quick-actions}
+    ${list-of-quick-launch-UI}=    Get WebElements    ${quick-actions}
+    FOR    ${element}    IN    ${quick-actions}
+        ${element-text}=    Get Text    ${element}
+        Log    Element text is ${element-text}
+        Should Contain    ${list-of-quick-launch}    ${element-text}
+    END
