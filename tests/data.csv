@@ -1,0 +1,4 @@
+*** Test Cases ***,${username},${input-password}
+Invalid username,Admun,admin123
+Invalid password,Admin,admin123
+Special Character,-$%,admin123

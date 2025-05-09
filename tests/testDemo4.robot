@@ -4,7 +4,8 @@ Library    SeleniumLibrary
 Test Setup    open the browser with the app url
 Test Teardown    Close Browser session
 Resource    resource.robot
-
+*** Variables ***
+${item-name}    Assign Leave
 *** Test Cases ***
 Validate Unsuccessful Login
     fill in the login form    ${username-data}    ${invalid-password-data} 
@@ -14,6 +15,7 @@ Validate Unsuccessful Login
 Validate Successful Login and more
     fill in the login form    ${username-data}    ${valid-password-data}
     verify all the contents of the quick launch is displayed
+    verify by dynamic xpath    ${item-name}
 
 
 
@@ -38,3 +40,10 @@ verify all the contents of the quick launch is displayed
         Log    Element text is ${element-text}
         Should Contain    ${list-of-quick-launch}    ${element-text}
     END
+
+verify by dynamic xpath
+    [arguments]    ${item-name}
+    Log    Item name is ${item-name}
+    Element Should Be Visible  xpath=(//div[@class='orangehrm-dashboard-widget-body'])[3]/div/div/div/p[text()='${item-name}']
+
+
