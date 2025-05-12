@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on darwin)" generated="2025-05-13T01:11:33.638348" rpa="false" schemaversion="5">
+<suite id="s1" name="testBuzzFunctionality" source="/Users/arkabhattacharyya/Desktop/Robot Framework/tests/testBuzzFunctionality.robot">
+<test id="s1-t1" name="Validate the header of the Buzz Page" line="20">
+<kw name="open browser and navigate to app url" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T01:11:33.695821" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T01:11:33.695729" elapsed="3.835169"/>
+</kw>
+<status status="PASS" start="2025-05-13T01:11:33.695423" elapsed="3.835681"/>
+</kw>
+<kw name="Login with correct username and password" owner="loginPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${username-loc}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T01:11:37.531764" elapsed="0.426551"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T01:11:37.958606" level="INFO">Typing text 'Admin' into text field 'xpath=(//input[@placeholder='Username'] | //input[@placeholder='Nombre de usuario'])'.</msg>
+<arg>${username-loc}</arg>
+<arg>${username-data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T01:11:37.958445" elapsed="0.083643"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T01:11:38.042438" level="INFO">Typing text 'admin123' into text field 'xpath=(//input[@placeholder='Password'] | //input[@placeholder='Contraseña'])'.</msg>
+<arg>${password-loc}</arg>
+<arg>${password-data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T01:11:38.042258" elapsed="0.033814"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T01:11:38.076337" level="INFO">Clicking element 'xpath=//button[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']'.</msg>
+<arg>${click-button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T01:11:38.076195" elapsed="1.046276"/>
+</kw>
+<arg>${username-data}</arg>
+<arg>${password-data}</arg>
+<status status="PASS" start="2025-05-13T01:11:37.531490" elapsed="1.591056"/>
+</kw>
+<kw name="Verify element is visible in UI">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T01:11:39.122883" elapsed="0.421822"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-13T01:11:39.550561" level="INFO">Element 'xpath=(//li/a/span[(text()='Buzz')])' is displayed.</msg>
+<arg>${element}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T01:11:39.544823" elapsed="0.005791"/>
+</kw>
+<arg>${buzz-element}</arg>
+<status status="PASS" start="2025-05-13T01:11:39.122699" elapsed="0.427972"/>
+</kw>
+<kw name="Click on the Buzz button" owner="landingPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T01:11:39.551044" level="INFO">Clicking element 'xpath=//li/a/span[(text()='Buzz')]'.</msg>
+<arg>${Buzz}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T01:11:39.550946" elapsed="0.644617"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T01:11:43.197150" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T01:11:40.195703" elapsed="3.001521"/>
+</kw>
+<status status="PASS" start="2025-05-13T01:11:39.550796" elapsed="3.646493"/>
+</kw>
+<kw name="Verify header in buzz page" owner="buzzPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${buzz-header}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T01:11:43.197651" elapsed="0.008515"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T01:11:43.215244" level="INFO">${actual-text} = Buzz Newsfeed</msg>
+<var>${actual-text}</var>
+<arg>${buzz-header}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T01:11:43.206267" elapsed="0.009002"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-13T01:11:43.215470" level="INFO">expected Buzz Newsfeed actual Buzz Newsfeed</msg>
+<arg>expected ${expected-text} actual ${actual-text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-13T01:11:43.215356" elapsed="0.000134"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual-text}</arg>
+<arg>${expected-text}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-13T01:11:43.215551" elapsed="0.000096"/>
+</kw>
+<arg>${expected-text-header}</arg>
+<status status="PASS" start="2025-05-13T01:11:43.197437" elapsed="0.018247"/>
+</kw>
+<kw name="close broser session" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T01:11:43.215941" elapsed="0.070710"/>
+</kw>
+<status status="PASS" start="2025-05-13T01:11:43.215817" elapsed="0.070907"/>
+</kw>
+<status status="PASS" start="2025-05-13T01:11:33.695137" elapsed="9.591645"/>
+</test>
+<doc>Check the navigation of Buzz Page in Orange HRM</doc>
+<status status="PASS" start="2025-05-13T01:11:33.638883" elapsed="9.648173"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="testBuzzFunctionality" id="s1" pass="1" fail="0" skip="0">testBuzzFunctionality</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
